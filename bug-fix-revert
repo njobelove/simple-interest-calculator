@@ -1,0 +1,17 @@
+$ curl -s https://api.github.com/repos/njobelove/simple-interest-calculator/pulls | jq '.[] | {title: .title, state: .state, head_repo: .head.repo.full_name, base_repo: .base.repo.full_name, html_url: .html_url}'
+{
+  "title": "Bug fix: Correct simple interest calculation formula",
+  "state": "open",
+  "head_repo": "Smart-Campus-ICTU/simple-interest-calculator",
+  "base_repo": "njobelove/simple-interest-calculator",
+  "html_url": "https://github.com/njobelove/simple-interest-calculator/pull/1"
+}
+
+$ cat bug-fix-revert
+{
+  "title": "Bug fix: Correct simple interest calculation formula",
+  "state": "open",
+  "head_repo": "Smart-Campus-ICTU/simple-interest-calculator",
+  "base_repo": "njobelove/simple-interest-calculator",
+  "html_url": "https://github.com/njobelove/simple-interest-calculator/pull/1"
+}
