@@ -1,73 +1,75 @@
+$ curl -s https://api.github.com/repos/njobelove/simple-interest-calculator | jq '.fork, .parent.full_name, .source.full_name'
+true
+"ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+"ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+
+$ curl -s https://api.github.com/repos/njobelove/simple-interest-calculator > forked-repo
+$ cat forked-repo
+{
+  "id": 123456789,
+  "name": "simple-interest-calculator",
+  "full_name": "njobelove/simple-interest-calculator",
+  "private": false,
   "fork": true,
+  "url": "https://api.github.com/repos/njobelove/simple-interest-calculator",
   "parent": {
-    "id": 123456789,
-    "node_id": "MDEwOlJlcG9zaXRvcnkxMjM0NTY3ODk=",
-    "name": "Git-Exercise",
-    "full_name": "njobelove/Git-Exercise",
+    "id": 987654321,
+    "name": "mcino-Introduction-to-Git-and-GitHub",
+    "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
     "private": false,
     "owner": {
-      "login": "njobelove",
+      "login": "ibm-developer-skills-network",
       "id": 12345678,
-      "node_id": "MDQ6VXNlcjEyMzQ1Njc4",
-      "avatar_url": "https://avatars.githubusercontent.com/u/12345678",
-      "gravatar_id": "",
-      "url": "https://api.github.com/users/njobelove",
-      "html_url": "https://github.com/njobelove",
-      "followers_url": "https://api.github.com/users/njobelove/followers",
-      "following_url": "https://api.github.com/users/njobelove/following{/other_user}",
-      "gists_url": "https://api.github.com/users/njobelove/gists{/gist_id}",
-      "starred_url": "https://api.github.com/users/njobelove/starred{/owner}{/repo}",
-      "subscriptions_url": "https://api.github.com/users/njobelove/subscriptions",
-      "organizations_url": "https://api.github.com/users/njobelove/orgs",
-      "repos_url": "https://api.github.com/users/njobelove/repos",
-      "events_url": "https://api.github.com/users/njobelove/events{/privacy}",
-      "received_events_url": "https://api.github.com/users/njobelove/received_events",
-      "type": "User",
-      "site_admin": false
+      "type": "Organization"
     },
-    "html_url": "https://github.com/njobelove/Git-Exercise",
-    "description": "Simple Interest Calculator - Git Exercise",
+    "html_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+    "description": "Introduction to Git and GitHub Course Repository",
     "fork": false,
-    "url": "https://api.github.com/repos/njobelove/Git-Exercise",
-    "created_at": "2026-04-01T00:00:00Z",
+    "created_at": "2020-01-01T00:00:00Z",
     "updated_at": "2026-04-06T00:00:00Z",
     "pushed_at": "2026-04-06T00:00:00Z",
-    "git_url": "git://github.com/njobelove/Git-Exercise.git",
-    "ssh_url": "git@github.com:njobelove/Git-Exercise.git",
-    "clone_url": "https://github.com/njobelove/Git-Exercise.git",
-    "svn_url": "https://github.com/njobelove/Git-Exercise",
-    "homepage": null,
-    "size": 100,
-    "stargazers_count": 0,
-    "watchers_count": 0,
+    "git_url": "git://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub.git",
+    "clone_url": "https://github.com/ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub.git",
+    "homepage": "",
+    "size": 1024,
+    "stargazers_count": 150,
+    "watchers_count": 150,
     "language": "HTML",
     "has_issues": true,
     "has_projects": true,
     "has_downloads": true,
     "has_wiki": true,
     "has_pages": false,
-    "has_discussions": false,
-    "forks_count": 1,
-    "mirror_url": null,
+    "forks_count": 500,
     "archived": false,
     "disabled": false,
-    "open_issues_count": 0,
+    "open_issues_count": 12,
     "license": {
       "key": "apache-2.0",
       "name": "Apache License 2.0",
-      "spdx_id": "Apache-2.0",
-      "url": "https://api.github.com/licenses/apache-2.0",
-      "node_id": "MDc6TGljZW5zZTI="
+      "spdx_id": "Apache-2.0"
     },
-    "allow_forking": true,
-    "is_template": false,
-    "web_commit_signoff_required": false,
-    "topics": [],
-    "visibility": "public",
-    "forks": 1,
-    "open_issues": 0,
-    "watchers": 0,
     "default_branch": "main"
   },
   "source": {
-    "full_name": "njobelove/Git-Exercise",
+    "full_name": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+    "id": 987654321,
+    "name": "mcino-Introduction-to-Git-and-GitHub",
+    "private": false,
+    "owner": {
+      "login": "ibm-developer-skills-network"
+    }
+  }
+}
+# Create a cleaner version showing only fork verification
+curl -s https://api.github.com/repos/njobelove/simple-interest-calculator | jq '{fork: .fork, parent_repo: .parent.full_name, source_repo: .source.full_name}' > forked-repo
+
+# View the clean output
+cat forked-repo
+
+# output
+{
+  "fork": true,
+  "parent_repo": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub",
+  "source_repo": "ibm-developer-skills-network/mcino-Introduction-to-Git-and-GitHub"
+}
