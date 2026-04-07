@@ -1,0 +1,19 @@
+user@DESKTOP-S86SRF5 MINGW64 ~/Desktop/simple-interest-calculator (main)
+$ git checkout main
+Already on 'main'
+Your branch is up to date with 'origin/main'.
+
+user@DESKTOP-S86SRF5 MINGW64 ~/Desktop/simple-interest-calculator (main)
+$ git merge cal
+Updating 123abc4..567def8
+Fast-forward
+ README.md       | 25 +++++++++++++++++++++++++
+ index.html      | 10 +++++-----
+ script.js       | 15 +++++++++++++++
+ style.css       |  8 ++++++++
+ 4 files changed, 53 insertions(+), 5 deletions(-)
+ create mode 100644 CONTRIBUTING.md
+ create mode 100644 LICENSE
+
+user@DESKTOP-S86SRF5 MINGW64 ~/Desktop/simple-interest-calculator (main)
+$
